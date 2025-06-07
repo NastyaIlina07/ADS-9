@@ -4,11 +4,8 @@
 #include  <fstream>
 #include  <locale>
 #include  <cstdlib>
-
-
 #include <algorithm>
 #include <vector>
-
 
 PMTree::PMTree(const std::vector<char>& vec) : base(vec) {
   root = createTree(vec);
