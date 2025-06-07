@@ -1,9 +1,10 @@
 // Copyright 2022 NNTU-CS
+#include  "tree.h"
 #include  <iostream>
 #include  <fstream>
 #include  <locale>
 #include  <cstdlib>
-#include  "tree.h"
+
 
 #include <algorithm>
 #include <vector>
@@ -39,13 +40,14 @@ void PMTree::clearTree(Node* p) {
   delete p;
 }
 
-void collect(Node* node, std::vector<char>& path,
-             std::vector<std::vector<char>>& output, int depth, int maxDepth) {
+static void collect(PMTree::Node* node, std::vector<char>& path,
+                    std::vector<std::vector<char>>& output, int depth,
+                    int maxDepth) {
   if (depth == maxDepth) {
     output.push_back(path);
     return;
   }
-  for (Node* child : node->next) {
+  for (PMTree::Node* child : node->next) {
     path.push_back(child->data);
     if (!child->next.empty())
       collect(child->next[0], path, output, depth + 1, maxDepth);
