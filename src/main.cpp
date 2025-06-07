@@ -1,9 +1,11 @@
 // Copyright 2022 NNTU-CS
-#include "tree.h"
+
 #include <chrono>
 #include <iostream>
 #include <random>
 #include <vector>
+
+#include "tree.h"
 int main() {
   std::vector<char> example = {'1', '2', '3'};
   PMTree tree(example);
