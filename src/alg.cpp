@@ -1,11 +1,13 @@
 // Copyright 2022 NNTU-CS
-#include  "tree.h"
+
 #include  <iostream>
 #include  <fstream>
 #include  <locale>
 #include  <cstdlib>
 #include <algorithm>
 #include <vector>
+
+#include  "tree.h"
 
 PMTree::PMTree(const std::vector<char>& vec) : base(vec) {
   root = createTree(vec);
